@@ -7,9 +7,10 @@ const getTodos = async (req, res) => {
     ]);
 
     if (results.rows.length === 0) {
-      return res.status(404).send("No se encontraron tareas");
+      return res.status(200).json([]);
     }
 
+    // Devuelve las tareas si existen
     res.json(results.rows);
   } catch (err) {
     console.error(err);
