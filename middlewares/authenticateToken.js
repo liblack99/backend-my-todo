@@ -20,8 +20,6 @@ const authenticateToken = (req, res, next) => {
       return res.status(400).send("Token no contiene userId");
     }
 
-    console.log("Token válido. User ID:", user.userId); // Accede a user.userId, no a user.id
-
     req.userId = user.userId; // Guarda el userId en la solicitud
     next(); // Continúa con el siguiente middleware o controlador
   });
