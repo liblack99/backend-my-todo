@@ -32,11 +32,11 @@ const registerUser = async (req, res) => {
 };
 
 const loginUser = async (req, res) => {
-  const {username, password} = req.body;
+  const {email, password} = req.body;
 
   try {
-    const results = await db.execute("SELECT * FROM users WHERE username = ?", [
-      username,
+    const results = await db.execute("SELECT * FROM users WHERE email = ?", [
+      email,
     ]);
 
     if (results.rows.length === 0) {
